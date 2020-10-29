@@ -1,12 +1,14 @@
 let inputs = document.querySelectorAll(".loginSec .inputVal")
 const myForm = document.querySelector('.loginSec form')
 let loader = document.querySelector('.loader')
+let rotateSection = document.querySelector('section')
 inputs = Array.from(inputs)
 let myInterval
 let reg
 let testEvery
 const loginBtn = document.querySelector('.submitLogin');
 const checkToDisableFun=()=>{
+   rotateSection.classList.add('rotated')
    const toggleDisable = inputs.filter(item => item.value.length == 0)
    if (toggleDisable) {
       loginBtn.disabled = true

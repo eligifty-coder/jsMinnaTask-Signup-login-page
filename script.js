@@ -2,6 +2,7 @@ let singUpBtn = document.querySelector(".clickBtn button")
 const myForm = document.querySelector("form")
 let inputs = document.querySelectorAll('.inputVal')
 let loader = document.querySelector('.loader')
+let rotateSection = document.querySelector('section')
 let myInterval
 let testEvery
 let reg
@@ -10,6 +11,7 @@ const checkToEnableArr=[]
 // disable sign up button
 const checkToDisableFun = () => {
    inputs = Array.from(inputs)
+   rotateSection.classList.add('rotated')
    const toggleDisable = inputs.filter(item => item.value.length == 0)
    if (toggleDisable) {
       singUpBtn.disabled = true
