@@ -1,7 +1,7 @@
 let singUpBtn = document.querySelector(".clickBtn button")
 const myForm = document.querySelector("form")
 let inputs = document.querySelectorAll('.inputVal')
-let loader = document.querySelector('.loader')
+let loader = document.querySelector('.loadingBtn')
 let rotateSection = document.querySelector('section')
 let myInterval
 let testEvery
@@ -172,20 +172,20 @@ function errorMessageFun(elebound, ele, valueToBeInserted) {
    const newDiv = document.createElement('span');
    let textInsert = document.createTextNode(valueToBeInserted)
    newDiv.append(textInsert);
-   ele.insertAdjacentElement('afterend', newDiv);
-   newDiv.classList.add('changePosition');
+   ele.insertAdjacentElement('afterend', newDiv)
+   newDiv.classList.add('changePosition')
    let tops = `${Math.floor(elebound.top +50)}px`
-   const lefts = `${Math.floor(elebound.left)}px`
+   const lefts = `${Math.floor(elebound.left-100)}px`
    if(ele.name=="checkbox"){
       tops = `${Math.floor(elebound.top+10)}px`
       newDiv.style.color="red"
-      newDiv.style.fontSize="10px"
+      newDiv.style.fontSize="8px"
    }
    newDiv.style.top = tops
    newDiv.style.left = lefts
    myInterval = setTimeout(() => {
       clearErrorFun(newDiv, ele)
-   }, 4000)
+   }, 3000)
 }
 
 function clearErrorFun(eleDiv, ele) {
@@ -206,18 +206,11 @@ function signUpFun(){
 }
 // loader
 function simulateLoadFun(){
-   let eleBoundary =singUpBtn.getBoundingClientRect()
-   let topLevel = `${Math.floor(eleBoundary.top+15)}px`
-   let leftLevel = `${Math.floor(eleBoundary.left+50)}px`
    loader.style.display="block"
-   loader.style.top=topLevel
-   loader.style.left=leftLevel
-   singUpBtn.classList.add('changeColor')
    setTimeout(clearLoadingInterval,3000)
 }
 function clearLoadingInterval(){
    loader.style.display = 'none'
-   singUpBtn.classList.remove('changeColor')
 }
 
 

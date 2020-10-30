@@ -1,6 +1,6 @@
 let inputs = document.querySelectorAll(".loginSec .inputVal")
 const myForm = document.querySelector('.loginSec form')
-let loader = document.querySelector('.loader')
+let loader = document.querySelector('.mySubmitBtn');
 let rotateSection = document.querySelector('section')
 inputs = Array.from(inputs)
 let myInterval
@@ -76,7 +76,7 @@ function regExpDetail(test, ele) {
             let valueToBeInserted = `wrong input fill the ${ele.name} field appropriately`
             myInterval = setTimeout(() => {
                errorMessageFun(eleBoundary, ele, valueToBeInserted)
-            }, 500)
+            }, 200)
          }
          break
          case "password":
@@ -110,13 +110,14 @@ function regExpDetail(test, ele) {
 function errorMessageFun(elebound, ele, valueToBeInserted) {
    const newDiv = document.createElement('span');
    let textInsert = document.createTextNode(valueToBeInserted)
-   newDiv.append(textInsert);
-   ele.insertAdjacentElement('afterend', newDiv);
-   newDiv.classList.add('changePosition');
-   let tops = `${Math.floor(elebound.top +30)}px`
-   const lefts = `${Math.floor(elebound.left)}px`
+   newDiv.append(textInsert)
+   ele.insertAdjacentElement('afterend', newDiv)
+   newDiv.classList.add('changePosition')
+   newDiv.classList.add('changeLoginPosition')
+   let tops = `${Math.floor(elebound.top -110)}px`
+   const lefts = `${Math.floor(elebound.left-190)}px`
    if(ele.name=="checkbox"){
-      tops = `${Math.floor(elebound.top+5)}px`
+      tops = `${Math.floor(elebound.top-140)}px`
       newDiv.style.color="red"
       newDiv.style.fontSize="8px"
    }
@@ -127,8 +128,8 @@ function errorMessageFun(elebound, ele, valueToBeInserted) {
    }, 4000)
 }
 function clearErrorFun(eleDiv, ele) {
-	ele.value = '';
-	eleDiv.style.display = 'none';
+	ele.value = ''
+	eleDiv.style.display = 'none'
 }
 // check to enable login Btn
 function enableSignUpBtn(arr){
@@ -147,17 +148,10 @@ function loginFun() {
 }
 // loader
 function simulateLoadFun(){
-   let eleBoundary =loginBtn.getBoundingClientRect()
-   let topLevel = `${Math.floor(eleBoundary.top+7)}px`
-   let leftLevel = `${Math.floor(eleBoundary.left+30)}px`
-   loader.style.display="block"
-   loader.style.top=topLevel
-   loader.style.left=leftLevel
-   loginBtn.classList.add('changeColor')
-   console.log(loginBtn.classList)
+   loader.style.zIndex = '1'
    setTimeout(clearLoadingInterval,5000)
 }
 function clearLoadingInterval() {
-	loader.style.display = 'none'
-	loginBtn.classList.remove('changeColor')
+   loader.style.zIndex = '-1'
 }
+console.log(loader)

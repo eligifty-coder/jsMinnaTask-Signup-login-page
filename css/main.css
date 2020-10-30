@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   transition: all .3s ease;
+}
+body{
+   font-family: "Open Sans",
+   sans-serif;
+   background:rgb(53, 152, 220);
+   padding: 30px 0;
+   height: 100vh;
+   display: grid;
+   align-content: center;
+   justify-content: center;
+   /* row-gap: 6px; */
+   position: relative;
+   perspective: 1500px;
+}
+.outerPara{
+   justify-self: center;
+   padding: 8px 0;
+   color: #fff;
+   font-weight: 700;
+   font-size: 14px;
+   letter-spacing: 1px;
+}
+.outerPara a{
+   color: #fff;
+   letter-spacing: 0.1px;
+}
+.outerPara a:hover{
+   color: #000
+}
+section{
+   transition: all 2s linear;
+   background-color: #fff;
+   max-width: 500px;
+   min-width: 200px;
+   display: grid;
+   row-gap: 20px;
+   backface-visibility: hidden;
+   padding-bottom: 36px;
+   -webkit-transform: translate3d(0, 0, 0);
+   transform: rotateY(180deg);
+   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+}
+article{
+   padding-top: 26px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height:100px;
+}
+article div{
+   height: 0.1px;
+   border-bottom: 1px solid rgb(170, 170, 170);
+}
+article h1{
+   font-size: 2rem;
+   text-transform: capitalize;
+   padding: 0 26px;
+}
+article p{
+   padding: 0 26px;
+   color: rgb(170, 170, 170);
+   font-size: 13px;
+}
+form{
+   display: grid;
+   row-gap: 28px;
+   padding: 0 26px;
+   grid-template-columns: 1fr;
+   height: 400px;
+   width: 100%;
+}
+form input{
+   background: rgb(242, 242, 242);
+   border: none;
+   outline: none;
+   padding: 18px;
+   border-radius: 5px;
+   color:#000;
+   font-size: 14px;
+   position: relative;
+}
+form input:focus{
+   border: 1px solid #a8c9e4;
+   box-shadow: inset 0 1.5px 3px rgb(190,190,190,.4),0 0 0 5px #e6f2f9;
+}
+.name{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   column-gap: 7px;
+}
+form input::placeholder{
+   color: rgb(166, 167, 184);
+   text-transform: capitalize;
+   font-weight: bold;
+}
+.form div{
+   width: 100%;
+}
+.extend{
+   width: 100%;
+}
+.policy span{
+   font-size: 14px;
+   font-weight: bold;
+   color: rgb(166, 167, 184);
+}
+.policy a{
+   color: rgb(105, 177, 231);
+   text-decoration: none;
+}
+.policy a:hover{
+   color: rgb(53, 152, 220);
+}
+.clickBtn{
+   position: relative;
+}
+.loadingBtn ,button {
+   border: none;
+   outline: none;
+   background: rgb(53, 152, 220);
+   padding: 10px 35px;
+   text-transform: capitalize;
+   font-weight: 900;
+   font-size: 16px;
+   color: #fff;
+   transition: all .2s ease;
+   cursor: pointer;
+   border-radius: 5px;
+}
+.loadingBtn{
+   width: 130px;
+   position: absolute;
+   height: 35px;
+   z-index: 1;
+   display: none;
+}
+
+button:hover{
+   background: rgb(53, 152, 220);
+}
+
+.loader{
+   width: 10px;
+   height: 10px;
+   border: 10px double #fff;
+   border-radius: 50%;
+   border-bottom: 10px solid rgb(53, 152, 220);
+   z-index: 1;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%,-50%);
+   animation: loader 2s linear infinite;
+   transition: all .3s ease;
+}
+.mySubmitBtn .loader{
+   position: absolute;
+   left: 40%;
+   top: 30%;
+}
+@keyframes loader{
+   0%{
+      transform: rotate(0deg);
+   }
+   100%{
+      transform: rotate(360deg);
+   }
+}
+/* login section */
+.loginSec form .extend{
+   padding: 10px;
+}
+.loginSec{
+   padding-top: 12px;
+   padding-bottom: 0;
+}
+.loginSec form{
+   padding-left: 0;
+   padding-right: 0;
+   row-gap: 12px;
+   height: 285px;
+}
+.loginSec form label{
+   font-size: 16px;
+   color: #777;
+}
+.checkbox, .tick{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.tick label{
+   margin-left: 5px;
+}
+.checkbox{
+   background: #ecf2f7;
+   padding: 6px 10px;
+}
+.loginSec .email,.loginSec .password {
+   padding-left: 10px;
+   padding-right: 10px;
+   color: #777;
+}
+.loginSec .email input, .loginSec .password input {
+   border: 1px solid #c7d0d2;
+   margin-top: 6px;
+   background: #fff;
+   outline: none;
+   color: #777;
+}
+.clickBtn{
+   position: relative;
+}
+
+.mySubmitBtn,
+.submitLogin {
+   padding: 6px 20px;
+   cursor: pointer;
+   font-size: 16px;
+   border-radius: 30px;
+   box-shadow: 0 1px 2px rgba(0,0,0,.3), inset 0 1px 2px rgba(255,255,255,.5);
+   color: #fff;
+   background-image: linear-gradient( #acd6ef 0%, #6ec2e8 100%);
+   font-weight: bold;
+   transition: all .3s ease;
+   display: inline-block;
+}
+.mySubmitBtn {
+   top: -5px;
+   left: 0;
+   height: 36px;
+   width: 83px;
+   font-size: 16px;
+   color: #fff;
+   position: absolute;
+   z-index: -1;
+}
+.submitLogin:hover{
+   background-image: linear-gradient(#6ec2e8 0%, #b6e2ff 100%);
+}
+.extend:focus{
+   border: 1px solid #a8c9e4;
+   box-shadow: inset 0 1.5px 3px rgb(190,190,190,.4),0 0 0 5px #e6f2f9;
+}
+/* javascript class */
+.changePosition {
+   position: absolute;
+   width: 100%;
+   color: red;
+   font-size: 8px;
+   padding: 6px 0;
+   padding-left: 30px;
+   text-transform: capitalize;
+   font-weight: bold;
+}
+.changeLoader {
+   left: 0;
+}
+.rotated{
+   transform: rotateY(0);
+}
+@media screen and (min-width:1000px){
+   .changePosition{
+      transform: translateX(-65%)
+   }
+   .changeLoginPosition{
+      transform: translateX(-97%);
+      padding-left: 5px;
+   }
+}
