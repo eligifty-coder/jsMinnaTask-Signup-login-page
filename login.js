@@ -149,7 +149,7 @@ function loginFun() {
 // loader
 function simulateLoadFun(){
    loader.style.zIndex = '1'
-   setTimeout(clearLoadingInterval,5000)
+   setTimeout(clearLoadingInterval,2000)
 }
 function clearLoadingInterval() {
    loader.style.zIndex = '-1'
