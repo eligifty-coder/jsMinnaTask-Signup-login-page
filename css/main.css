@@ -14,7 +14,6 @@ body{
    display: grid;
    align-content: center;
    justify-content: center;
-   /* row-gap: 6px; */
    position: relative;
    perspective: 1500px;
 }
@@ -37,7 +36,6 @@ section{
    transition: all 2s linear;
    background-color: #fff;
    max-width: 500px;
-   min-width: 200px;
    display: grid;
    row-gap: 20px;
    backface-visibility: hidden;
