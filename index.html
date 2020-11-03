@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
    <!-- custom css -->
    <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
    <section>
       <article>
@@ -18,21 +20,33 @@
       </article>
       <form>
          <div class="name">
-            <input type="text" class="firstName inputVal" placeholder="first name" name="firstName">
-            <input type="text" class="lastName inputVal" placeholder="last name" name="lastName">
+            <div>
+               <input type="text" class="firstName inputVal" placeholder="first name" name="firstName">
+               <span tyle="display: none;" class="first"></span>
+            </div>
+            <div>
+               <input type="text" class="lastName inputVal" placeholder="last name" name="lastName">
+               <span tyle="display: none;" class="last"></span>
+            </div>
          </div>
-         <div class="email" >
+         <div class="email">
             <input type="text" placeholder="Email" class="extend inputVal" name="email">
+            <span tyle="display: none;" class="emailed"></span>
          </div>
          <div class="password ">
             <input type="text" placeholder="password" class="extend inputVal" name="password">
+            <span tyle="display: none;" class="passed"></span>
          </div>
          <div class="confirmPassword ">
             <input type="text" placeholder="confirm password" class="extend inputVal" name="confirmPassword">
+            <span tyle="display: none;" class="confirmed"></span>
          </div>
          <div class="policy">
-            <input type="checkbox" class="inputVal" name="checkbox">
-            <span>I accept the <a href="#">Terms of Use</a> & <a href="#">Privacy Policy</a></span>
+            <div>
+               <input type="checkbox" class="inputVal" value="off" name="checkbox">
+               <span>I accept the <a href="#">Terms of Use</a> & <a href="#">Privacy Policy</a></span>
+            </div>
+            <span style="display: none;" class="checked"></span>
          </div>
          <div class="clickBtn">
             <div class="loadingBtn">
@@ -43,7 +57,8 @@
       </form>
    </section>
    <p class="outerPara">Already have an account? <a href="login.html">Login here.</a></p>
-<!-- js -->
-<script src="./script.js"></script>
+   <!-- js -->
+   <script src="./script.js"></script>
 </body>
+
 </html>
