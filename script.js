@@ -20,7 +20,8 @@ const checkToDisableFun = () => {
    rotateSection.classList.add('rotated')
    const toggleDisable = inputs.filter(item => item.value.length == 0)
    if (toggleDisable) {
-      singUpBtn.disabled = true
+      singUpBtn. disabled = true
+      singUpBtn.classList.add('disabledBtn')
    }
    inputs.forEach(item => {
    item.dataset['enable']=0
@@ -103,7 +104,8 @@ function checkToValidateFun() {
 // emptyFieldValidationFun
 function emptyFieldValidationFun(ele){
    let valueToBeInserted = `field cannot be empty, blank space not allowed`
-   singUpBtn.disabled = true;
+   singUpBtn. disabled = true;
+   singUpBtn.classList.add('disabledBtn')
    myInterval = setTimeout(() => {
       errorMessageFun( ele, valueToBeInserted)
    }, 500)
@@ -117,7 +119,8 @@ function regExpDetail(test, ele) {
             ele.dataset['enable']=1
          }
          if (!test) {
-            singUpBtn.disabled = true;
+            singUpBtn. disabled = true;
+            singUpBtn.classList.add('disabledBtn')
             let valueToBeInserted = `${ele.name} field  shouldn't contain any number or symbol`
             myInterval = setTimeout(() => {
                errorMessageFun(first,valueToBeInserted)
@@ -129,7 +132,8 @@ function regExpDetail(test, ele) {
             ele.dataset['enable']=1
          }
          if (!test) {
-            singUpBtn.disabled = true;
+            singUpBtn. disabled = true;
+            singUpBtn.classList.add('disabledBtn')
             let valueToBeInserted = `${ele.name} field  shouldn't contain any number or symbol`
             myInterval = setTimeout(() => {
                errorMessageFun(last,  valueToBeInserted)
@@ -142,7 +146,8 @@ function regExpDetail(test, ele) {
             ele.dataset['enable'] = 1
          }
          if (!test) {
-            singUpBtn.disabled = true;
+            singUpBtn. disabled = true;
+            singUpBtn.classList.add('disabledBtn')
             let valueToBeInserted = `wrong input fill the ${ele.name} field appropriately`
             myInterval = setTimeout(() => {
                errorMessageFun(emailed, valueToBeInserted)
@@ -153,13 +158,15 @@ function regExpDetail(test, ele) {
       case "password":
          if(!checkForZeroLengthFun){
             valueToBeInserted= `field cannot be empty, blank space not allowed`
-            singUpBtn.disabled = true;
+            singUpBtn. disabled = true;
+            singUpBtn.classList.add('disabledBtn')
          }
          if(test){
             ele.dataset['enable'] = 1
          }
          if (!test) {
-            singUpBtn.disabled = true;
+            singUpBtn. disabled = true;
+            singUpBtn.classList.add('disabledBtn')
             let valueToBeInserted = `${ele.name} field should contain atleast 8 characters`
             myInterval = setTimeout(() => {
                errorMessageFun(passed,valueToBeInserted)
@@ -168,14 +175,16 @@ function regExpDetail(test, ele) {
          break
       case "confirmPassword":
          if(!checkForZeroLengthFun){
-            singUpBtn.disabled = true;
+            singUpBtn. disabled = true;
+            singUpBtn.classList.add('disabledBtn')
             valueToBeInserted= `field cannot be empty`
          }
          if(test){
             ele.dataset['enable'] = 1
          }
          if (!test) {
-            singUpBtn.disabled = true
+            singUpBtn. disabled = true
+            singUpBtn.classList.add('disabledBtn')
             let valueToBeInserted = `password does not match`
             myInterval = setTimeout(() => {
                errorMessageFun(confirmed,  valueToBeInserted)
@@ -188,7 +197,8 @@ function regExpDetail(test, ele) {
          }
          if (!ele.checked) {
             let valueToBeInserted = `kindly tick the box to agree`
-            singUpBtn.disabled = true
+            singUpBtn. disabled = true
+            singUpBtn.classList.add('disabledBtn')
             myInterval = setTimeout(() => {
                errorMessageFun(checked, valueToBeInserted)
             }, 500)
@@ -203,7 +213,8 @@ function checkForZeroLengthFun(thisValue){
 // error Message
 function errorMessageFun(elebound, valueToBeInserted) {
    elebound.style.display="inline"
-   singUpBtn.disabled = true
+   singUpBtn. disabled = true
+   singUpBtn.classList.add('disabledBtn')
    elebound.innerHTML= valueToBeInserted
    elebound.style.color="red"
    elebound.style.fontSize="12px"
@@ -219,7 +230,8 @@ function clearErrorFun(eleDiv) {
 function enableSignUpBtn(arr){
    let checkEnable = arr.every(item=>item.dataset['enable']==1)
    if(checkEnable){
-      singUpBtn.disabled=false
+      singUpBtn. disabled=false
+      singUpBtn.classList.remove('disabledBtn')
       myForm.onsubmit = signUpFun
    }
 }
@@ -235,5 +247,6 @@ function simulateLoadFun(){
 function clearLoadingInterval(){
    loader.style.display = 'none'
 }
+
 
 

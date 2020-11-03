@@ -159,6 +159,13 @@ button:hover{
    animation: loader 2s linear infinite;
    transition: all .3s ease;
 }
+.disabledBtn{
+   background: #ccc;
+   cursor: not-allowed;
+}
+.disabledBtn:hover{
+   background-color: #ccc;
+}
 .mySubmitBtn .loader{
    position: absolute;
    left: 40%;
